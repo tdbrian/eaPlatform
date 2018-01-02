@@ -1,0 +1,31 @@
+@import '../../../styles/variables';
+
+nav {
+  position: fixed;
+  background-color: $main-nav-background;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 90px;
+}
+
+a {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  height: $main-nav-size;
+  width: $main-nav-size;
+  font-size: 12px;
+  font-weight: 500;
+  color: white;
+  text-decoration: none;
+  &:hover, &.active {
+    background-color: $primary-color;
+  }
+}
+
+i {
+  font-size: 32px;
+  padding-bottom: 4px;
+}

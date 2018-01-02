@@ -1,0 +1,9 @@
+@import '../../../styles/variables';
+
+:host {
+  position: fixed;
+  left: $main-nav-size + $section-nav-width;
+  right: 0;
+  height: 35px;
+  background-color: white;
+}

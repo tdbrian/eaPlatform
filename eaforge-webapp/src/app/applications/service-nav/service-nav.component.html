@@ -1,0 +1,35 @@
+<section class="section-nav">
+  <app-corner-logo></app-corner-logo>
+
+  <a routerLink="./">
+    <i class="zmdi zmdi-chevron-left"></i> Back to Apps List
+  </a>
+
+  <!-- Endpoints -->
+
+  <div class="header">
+    <i class="zmdi zmdi-pin-drop"></i> Endpoints
+    <span class="suffix">Manager</span>
+  </div>
+
+  <a [routerLink]="['service', id, 'endpoints']" [class.active]="isActive('endpoints')">Endpoints</a>
+
+  <!-- Security -->
+
+  <div class="header">
+    <i class="zmdi zmdi-lock"></i> Security
+    <span class="suffix">Manager</span>
+  </div>
+
+  <a [routerLink]="['service', id, 'permissions']" [class.active]="isActive('permissions')">Permissions</a>
+
+  <!-- Settings -->
+
+  <div class="header">
+    <i class="zmdi zmdi-code-setting"></i> Settings
+    <span class="suffix">Manager</span>
+  </div>
+
+  <a routerLink="general" routerLinkActive="active">General</a>
+
+</section>

@@ -1,0 +1,55 @@
+@import 'variables';
+.section-nav {
+  position: fixed;
+  flex-direction: column;
+  left: $main-nav-size;
+  top: 0;
+  bottom: 0;
+  display: flex;
+  font-size: 13px;
+  color: white;
+  background-color: $section-nav-background;
+  width: $section-nav-width;
+  height: 100%;
+  .header {
+    display: flex;
+    margin-left: 30px;
+    margin-top: 20px;
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding-bottom: 5px;
+    span {
+      padding-left: 4px;
+    }
+  }
+  a, button {
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 5px 10px;
+    color: #979ea8;
+    font-weight: 500;
+    cursor: pointer;
+    &:hover,
+    &.active {
+      color: white;
+      text-decoration: none;
+      border-radius: 2px;
+    }
+    &.active {
+      background-color: $primary-color-lighter;
+    }
+    i {
+      font-size: inherit;
+      padding-right: 3px;
+    }
+  }
+  .suffix {
+    font-weight: 400;
+  }
+  i {
+    font-size: 18px;
+    padding-right: 6px;
+  }
+}
+

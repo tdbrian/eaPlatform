@@ -1,0 +1,40 @@
+<div class="page center">
+  <div class="content med-width">
+
+    <!-- Header -->
+    <div class="title">
+      <h3>Apps
+        <span>List</span>
+      </h3>
+      <h1>New Service</h1>
+    </div>
+
+    <!-- New app form -->
+    <form #newServiceForm="ngForm" novalidate (ngSubmit)="createService(newServiceForm)">
+      <fieldset [disabled]="createResult.isLoading">
+      <div class="form-group">
+        <label for="nameInput">Service Name</label>
+        <input #name="ngModel" type="email" class="form-control" [(ngModel)]="app.name" name="name" id="nameInput" placeholder="Enter name"
+          required maxlength="150" minlength="2">
+        <small [hidden]="name.valid || (name.pristine && !newServiceForm.submitted)" class="text-danger">
+          Name is required (minimum 2 and maximum of 150 characters).
+        </small>
+        <small class="form-text text-muted">Can contain spaces, ex. "Orders". Don't include "Api" or "Service" in the name.</small>
+      </div>
+      <div class="form-group">
+        <label for="descriptionInput">Description</label>
+        <textarea #description="ngModel" class="form-control" id="descriptionInput" [(ngModel)]="app.longDescription" name="description"
+          placeholder="Enter Description" maxlength="300"></textarea>
+        <small [hidden]="description.valid || (description.pristine && !newServiceForm.submitted)" class="text-danger">
+          Maximum of 300 characters
+        </small>
+        <small class="form-text text-muted">Gives other devs and users addtional information about the service. What it does, who it's for, how is it intended
+          to work, etc.</small>
+      </div>
+      <button type="submit" class="btn btn-primary mt-2">Create Service</button>
+    </fieldset>
+    </form>
+
+  </div>
+</div>
+

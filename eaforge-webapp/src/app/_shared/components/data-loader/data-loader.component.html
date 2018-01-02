@@ -1,0 +1,14 @@
+<!-- Loaded Data -->
+<div *ngIf="!dataLoader.isLoading && !dataLoader.loadError">
+  <ng-content></ng-content>
+</div>
+
+<!-- Error -->
+<div *ngIf="!dataLoader.isLoading && dataLoader.loadError">
+  Error loading data...
+</div>
+
+<!-- Loader -->
+<div *ngIf="dataLoader.isLoading">
+  Loading...
+</div>

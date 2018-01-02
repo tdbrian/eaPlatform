@@ -1,0 +1,24 @@
+{
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    ".editorconfig": true,
+    ".gitignore": true,
+    "karma.conf.js": true,
+    "tsconfig.json": true,
+    "tslint.json": true,
+    "package-lock.json": true,
+    "src/test.ts": true,
+    "src/tsconfig.app.json": true,
+    "src/tsconfig.spec.json": true,
+    "src/typings.d.ts": true,
+    "src/polyfills.ts": true
+  },
+  "cSpell.words": [
+    "sweetalert",
+    "toverux"
+  ]
+}

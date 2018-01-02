@@ -1,0 +1,19 @@
+html, body {
+  background-color: $page-background-color;
+  font-family: 'Roboto', sans-serif;
+}
+
+body {
+  background-color: transparent;
+  color: white;
+}
+
+button, .btn {
+  cursor: pointer;
+  border-radius: 2px;
+}
+
+small, .small {
+  font-size: 90%;
+  font-weight: 400;
+}

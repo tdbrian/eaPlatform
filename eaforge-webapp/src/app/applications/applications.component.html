@@ -1,0 +1,4 @@
+<app-applications-nav *ngIf="!isServiceRoute"></app-applications-nav>
+<app-service-nav *ngIf="isServiceRoute"></app-service-nav>
+
+<router-outlet></router-outlet>

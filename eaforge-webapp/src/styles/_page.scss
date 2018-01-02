@@ -1,0 +1,64 @@
+@import 'variables';
+
+$margin: 30px;
+
+.page {
+  margin: $margin;
+  margin-left: $section-nav-width + $margin;
+  margin-top: $margin + 5px;
+  color: $font-color;
+  font-size: 14px;
+  min-height: 300px;
+  header {
+    display: flex;
+    justify-content: space-between;
+  }
+  .title {
+    h1 {
+      font-size: 30px;
+      font-weight: 300;
+      color: $primary-color;
+      margin-bottom: 20px;
+    }
+    h3 {
+      font-size: 14px;
+      text-transform: uppercase;
+      font-weight: 700;
+      margin-bottom: 0;
+      span {
+        font-weight: 500;
+      }
+    }
+  }
+  &.center {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+#section-wrapper {
+  margin-left: 90px;
+}
+
+.content {
+  padding: 20px;
+  border-radius: 2px;
+  background-color: white;
+
+  &.med-width {
+    width: 650px;
+  }
+}
+
+.table thead th {
+  font-size: 13px;
+  text-transform: uppercase;
+  border-top: none;
+}
+
+.table td {
+  font-size: 14px;
+  i {
+    font-size: 24px;
+  }
+}

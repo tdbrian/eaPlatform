@@ -1,0 +1,60 @@
+<div class="page">
+  <div class="content">
+
+    <!-- Header -->
+    <header>
+      <div class="title">
+        <h3>Apps
+          <span>List</span>
+        </h3>
+        <h1>All Apps</h1>
+      </div>
+      <div class="actions">
+        <a class="btn btn-outline-primary" routerLink="../new-service"><i class="zmdi zmdi-plus-circle"></i> Add New Service</a>
+      </div>
+    </header>
+
+    <app-data-loader [dataLoader]="appsLoader">
+
+      <!-- No apps -->
+      <div class="text-center" *ngIf="!appsLoader.isLoading && !appsLoader.loadError && appsLoader?.value?.length === 0">
+        <p>
+          Doesn't look like you have any apps yet. Would you like to create your first?
+        </p>
+        <a class="btn btn-primary" routerLink="../new-service">Yes, let's create a REST service</a>
+      </div>
+
+      <!-- Apps list -->
+      <div *ngIf="appsLoader?.value?.length">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col" width="40"></th>
+              <th scope="col">Name</th>
+              <th scope="col">Description</th>
+              <th scope="col" align="right"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let app of appsLoader.value">
+              <td align="middle">
+                <i class="zmdi zmdi-rss"></i>
+              </td>
+              <td>{{app.name}}</td>
+              <td *ngIf="app.shortDescription">{{app.shortDescription}}</td>
+              <td *ngIf="!app.shortDescription">
+                <span class="small text-muted">(No Descipriton)</span>
+              </td>
+              <td align="right">
+                <button class="btn btn-sm btn-primary" (click)="open(app)">Open</button>
+                <a class="btn btn-sm btn-primary" [routerLink]="['../edit', app.id]">Settings</a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </app-data-loader>
+  </div>
+
+</div>
