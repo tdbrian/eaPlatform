@@ -14,13 +14,13 @@ namespace EaForgeApi.Endpoints
         }
 
         [HttpGet("application/{id}")]
-        public IEnumerable<EndpointEntity> GetByApplication(int applicationId)
+        public IEnumerable<EndpointEntity> GetByApplication([FromRoute]int id)
         {
-            return _endpointService.GetAll(applicationId);
+            return _endpointService.GetAll(id);
         }
 
         [HttpGet("{id}")]
-        public EndpointEntity Get(int id)
+        public EndpointEntity Get([FromRoute]int id)
         {
             return _endpointService.GetById(id);
         }
@@ -32,13 +32,13 @@ namespace EaForgeApi.Endpoints
         }
 
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody]EndpointEntity endpoint)
+        public void Put([FromRoute]int id, [FromBody]EndpointEntity endpoint)
         {
             _endpointService.Update(endpoint);
         }
 
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public void Delete([FromRoute]int id)
         {
             var endpoint = _endpointService.GetById(id);
             _endpointService.Delete(endpoint);

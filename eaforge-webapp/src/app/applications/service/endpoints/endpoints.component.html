@@ -8,10 +8,51 @@
         </h3>
         <h1>Endpoints</h1>
       </div>
-      <div class="actions">
+      <div class="actions" *ngIf="!endpointsLoader.isLoading && !endpointsLoader.loadError && endpointsLoader?.value?.length > 0">
         <a class="btn btn-outline-primary" routerLink="../new-endpoint"><i class="zmdi zmdi-plus-circle"></i> Add New Endpoint</a>
       </div>
     </header>
+
+    <app-data-loader [dataLoader]="endpointsLoader">
+
+      <!-- No apps -->
+      <div class="text-center" *ngIf="!endpointsLoader.isLoading && !endpointsLoader.loadError && endpointsLoader?.value?.length === 0">
+        <p>
+          Doesn't look like you have any endpoints yet. Would you like to create your first?
+        </p>
+        <a class="btn btn-primary" routerLink="../new-service">Yes, let's create an endpoint</a>
+      </div>
+
+      <!-- Apps list -->
+      <div *ngIf="endpointsLoader?.value?.length">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col" width="40"></th>
+              <th scope="col">Name</th>
+              <th scope="col">Description</th>
+              <th scope="col" align="right"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let endpoint of endpointsLoader.value">
+              <td align="middle">
+                <i class="zmdi zmdi-rss"></i>
+              </td>
+              <td>{{endpoint.name}}</td>
+              <td *ngIf="endpoint.description">{{endpoint.description}}</td>
+              <td *ngIf="!app.shortDescription">
+                <span class="small text-muted">(No Descipriton)</span>
+              </td>
+              <td align="right">
+                <button class="btn btn-sm btn-primary" (click)="open(endpoint)">Open</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </app-data-loader>
 
   </div>
 </div>

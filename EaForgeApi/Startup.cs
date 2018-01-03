@@ -1,4 +1,5 @@
 ﻿using EaForgeApi.Applications;
+using EaForgeApi.Endpoints;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -29,6 +30,8 @@ namespace EaForgeApi
 
             services.AddTransient<ApplicationRepository>();
             services.AddTransient<ApplicationService>();
+            services.AddTransient<EndpointsRepository>();
+            services.AddTransient<EndpointsService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { ApplicationService } from '../api/services/application.service';
+import { ApplicationsService } from '../api/services/applications.service';
 import { Observable } from 'rxjs/Observable';
 import { ApplicationEntity } from '../api/models/application-entity';
 import { DataLoader } from '../_shared/models/DataLoader';
@@ -10,7 +10,7 @@ export class CurrentApplicationService {
   public appLoader: DataLoader<ApplicationEntity> = new DataLoader();
   public app$ = new BehaviorSubject<ApplicationEntity>(null);
 
-  constructor(private appService: ApplicationService) { }
+  constructor(private appService: ApplicationsService) { }
 
   async fetch(id: number) {
     await this.appLoader.handle(this.appService.ApiApplicationsByIdGet(id));

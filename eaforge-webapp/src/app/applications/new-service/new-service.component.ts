@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ApplicationEntity } from '../../api/models/application-entity';
 import { DataLoader } from '../../_shared/models/DataLoader';
-import { ApplicationService } from '../../api/services/application.service';
+import { ApplicationsService } from '../../api/services/applications.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,7 +12,7 @@ export class NewServiceComponent implements OnInit {
   app: ApplicationEntity;
   createResult: DataLoader<void>;
 
-  constructor(private appService: ApplicationService, private router: Router) { }
+  constructor(private appService: ApplicationsService, private router: Router) { }
 
   ngOnInit() {
     this.app = new ApplicationEntity();

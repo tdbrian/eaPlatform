@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApplicationEntity } from '../../api/models/application-entity';
-import { ApplicationService } from '../../api/services/application.service';
+import { ApplicationsService } from '../../api/services/applications.service';
 import { DataLoader } from '../../_shared/models/DataLoader';
 import { Router } from '@angular/router';
 import { CurrentApplicationService } from '../CurrentApplication.service';
@@ -12,7 +12,7 @@ import { CurrentApplicationService } from '../CurrentApplication.service';
 export class ListAppsComponent implements OnInit {
   appsLoader = new DataLoader<ApplicationEntity[]>();
 
-  constructor(private appService: ApplicationService, private router: Router, private currentApp: CurrentApplicationService) { }
+  constructor(private appService: ApplicationsService, private router: Router, private currentApp: CurrentApplicationService) { }
 
   async ngOnInit() {
     await this.appsLoader.handle(this.appService.ApiApplicationsGet());

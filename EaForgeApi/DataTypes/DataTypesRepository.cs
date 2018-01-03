@@ -52,8 +52,8 @@ namespace EaForgeApi.DataTypes
         {
             using (var db = new SqlConnection(_config))
             {
-                const string sql = "UPDATE DataTypes SET Name = @Name, Description = @Description, Version = @Version, Path = @Path, RestType = @RestType " +
-                                   "WHERE Id = @Id AND EndpointId = @EndpointId";
+                const string sql = "UPDATE DataTypes SET Name = @Name, Description = @Description, Type = @Type, UsedForSearch = @UsedForSearch, DefaultValue = @DefaultValue " +
+                                   "WHERE Id = @Id";
                 return db.Execute(sql, entpoint);
             }
         }

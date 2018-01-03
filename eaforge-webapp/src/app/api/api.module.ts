@@ -2,8 +2,9 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { ApiConfiguration } from './api-configuration';
 
-import { ApplicationService } from './services/application.service';
-import { OrganizationsService } from './services/organizations.service';
+import { ApplicationsService } from './services/applications.service';
+import { DataTypesService } from './services/data-types.service';
+import { EndpointsService } from './services/endpoints.service';
 import { UsersService } from './services/users.service';
 
 /**
@@ -19,8 +20,9 @@ import { UsersService } from './services/users.service';
   declarations: [],
   providers: [
     ApiConfiguration,
-   ApplicationService,
-   OrganizationsService,
+   ApplicationsService,
+   DataTypesService,
+   EndpointsService,
    UsersService
   ],
 })

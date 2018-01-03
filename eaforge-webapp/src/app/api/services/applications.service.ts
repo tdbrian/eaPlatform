@@ -13,7 +13,7 @@ import { ApplicationEntity } from '../models/application-entity';
 
 
 @Injectable()
-export class ApplicationService extends BaseService {
+export class ApplicationsService extends BaseService {
   constructor(
     config: ApiConfiguration,
     http: HttpClient
@@ -133,7 +133,7 @@ export class ApplicationService extends BaseService {
    * @param id - undefined
    * @param application - undefined
    */
-  ApiApplicationsByIdPutResponse(params: ApplicationService.ApiApplicationsByIdPutParams): Observable<HttpResponse<void>> {
+  ApiApplicationsByIdPutResponse(params: ApplicationsService.ApiApplicationsByIdPutParams): Observable<HttpResponse<void>> {
     let __params = this.newParams();
     let __headers = new HttpHeaders();
     let __body: any = null;
@@ -164,7 +164,7 @@ export class ApplicationService extends BaseService {
    * @param id - undefined
    * @param application - undefined
    */
-  ApiApplicationsByIdPut(params: ApplicationService.ApiApplicationsByIdPutParams): Observable<void> {
+  ApiApplicationsByIdPut(params: ApplicationsService.ApiApplicationsByIdPutParams): Observable<void> {
     return this.ApiApplicationsByIdPutResponse(params).pipe(
       map(_r => _r.body)
     );
@@ -207,7 +207,7 @@ export class ApplicationService extends BaseService {
     );
   }}
 
-export module ApplicationService {
+export module ApplicationsService {
   export interface ApiApplicationsByIdPutParams {
     id: number;
     application?: ApplicationEntity;

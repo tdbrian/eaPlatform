@@ -20,7 +20,7 @@ namespace EaForgeApi.Applications
         }
 
         [HttpGet("{id}")]
-        public ApplicationEntity Get(int id)
+        public ApplicationEntity Get([FromRoute]int id)
         {
             return _applicationService.GetById(id);
         }
@@ -32,13 +32,13 @@ namespace EaForgeApi.Applications
         }
 
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody]ApplicationEntity application)
+        public void Put([FromRoute]int id, [FromBody]ApplicationEntity application)
         {
             _applicationService.Update(application);
         }
 
         [HttpDelete("{id}")]
-        public void Delete(int id)
+        public void Delete([FromRoute]int id)
         {
             var application = _applicationService.GetById(id);
             _applicationService.Delete(application);

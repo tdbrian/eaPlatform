@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ApplicationEntity } from '../../api/models/application-entity';
 import { DataLoader } from '../../_shared/models/DataLoader';
-import { ApplicationService } from '../../api/services/application.service';
 import { Router } from '@angular/router';
 import { DataLoaderComponent } from '../../_shared/components/data-loader/data-loader.component';
 import { ActivatedRoute } from '@angular/router';
 import { CurrentApplicationService } from '../CurrentApplication.service';
+import { ApplicationsService } from '../../api/services';
 
 @Component({
   selector: 'app-edit-app',
@@ -20,7 +20,7 @@ export class EditAppComponent implements OnInit {
   appId: number;
 
   constructor(
-    private appService: ApplicationService,
+    private appService: ApplicationsService,
     private currentApp: CurrentApplicationService,
     private router: Router,
     private route: ActivatedRoute
