@@ -6,7 +6,7 @@ using Microsoft.Extensions.Configuration;
 
 namespace EaForgeApi.Applications
 {
-    public class ApplicationRepository
+    public class ApplicationRepository : IApplicationRepository
     {
         private readonly string _config;
 

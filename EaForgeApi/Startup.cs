@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using MongoDB.Driver;
 using Swashbuckle.AspNetCore.Swagger;
 
 namespace EaForgeApi
@@ -28,10 +29,12 @@ namespace EaForgeApi
                 c.SwaggerDoc("v1", new Info { Title = "EA Forge API", Version = "v1" });
             });
 
+            services.AddSingleton(new MongoClient(Configuration.GetConnectionString("MongoDb")));
             services.AddTransient<ApplicationRepository>();
             services.AddTransient<ApplicationService>();
             services.AddTransient<EndpointsRepository>();
             services.AddTransient<EndpointsService>();
+            services.AddTransient<IApplicationRepository, ApplicationMongoDbRepo>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
